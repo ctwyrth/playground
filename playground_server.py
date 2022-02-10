@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('play.html')
 
 @app.route('/play')
 def playground():
@@ -14,7 +14,7 @@ def playground():
 
 @app.route('/play/<int:val>')
 def multi_play(val):
-    return render_template('play.html', val)
+    return render_template('play.html', times = val)
 
 @app.route('/play/<int:val>/<string:color>')
 def multi_play_color(val, color):
