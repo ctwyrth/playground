@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Playground - Flask</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            background-color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 {
+            margin: 0 0 25px;
+        }
+        
+        .cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            overflow: visible;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 250px;
+            background-color: blueviolet;
+            border: 0;
+            border-radius: 10px;
+            margin: 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <div class="cards">
+            {% for x in range(0, times): %}
+                <div class="card"
+                    {% if color %}
+                        style="background-color: {{ color }}"
+                    {% endif %}
+                ></div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
